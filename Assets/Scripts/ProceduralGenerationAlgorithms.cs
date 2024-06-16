@@ -30,7 +30,7 @@ public static class Direction2D
 
     public static Vector2Int GetRandomCardinalDirection()
     {
-        return cardinalDirectionList[Random.Range(0, 1)];
+        return cardinalDirectionList[Random.Range(0, cardinalDirectionList.Count)];
     }
 }
 
