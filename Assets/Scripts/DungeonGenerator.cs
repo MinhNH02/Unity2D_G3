@@ -8,18 +8,19 @@ using Random = UnityEngine.Random;
 public class DungeonGenerator : AbstractDungeonGenerator
 {
     [SerializeField]
-    private SimpleRandomWalkSO randomWalkParameter;
+    protected SimpleRandomWalkSO randomWalkParameter;
 
     protected override void RunProceduralGeneration()
     {
-        HashSet<Vector2Int> floorPos = RunRandomWalk();
+        HashSet<Vector2Int> floorPos = RunRandomWalk(randomWalkParameter, startPos);
         tilemapVisualizer.Clear();
         tilemapVisualizer.PaintFloorTiles(floorPos);
+        WallGenerator.CreateWalls(floorPos, tilemapVisualizer);
     }
 
-    protected HashSet<Vector2Int> RunRandomWalk()
+    protected HashSet<Vector2Int> RunRandomWalk(SimpleRandomWalkSO parameters, Vector2Int position)
     {
-        var currentPos = startPos;
+        var currentPos = position;
         HashSet<Vector2Int> floorPos = new HashSet<Vector2Int>();
         for (int i = 0; i < randomWalkParameter.iterations; i++)
         {
