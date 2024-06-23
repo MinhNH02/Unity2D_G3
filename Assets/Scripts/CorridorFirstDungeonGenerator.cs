@@ -24,10 +24,43 @@ public class CorridorFirstDungeonGenerator : DungeonGenerator
         CreateCorridors(floorPos, potentialRoomPos);
         HashSet<Vector2Int> roomPos = CreateRooms(potentialRoomPos);
 
+        List<Vector2Int> deadEnds = FindAllDeadEnds(floorPos);
+
+        CreateRoomsAtDeadEnd(deadEnds, roomPos);
+
         floorPos.UnionWith(roomPos);
 
         tilemapVisualizer.PaintFloorTiles(floorPos);
         WallGenerator.CreateWalls(floorPos,tilemapVisualizer);
+    }
+
+    private void CreateRoomsAtDeadEnd(List<Vector2Int> deadEnds, HashSet<Vector2Int> roomFloors)
+    {
+        foreach(var position in deadEnds)
+        {
+            if(roomFloors.Contains(position) == false)
+            {
+                var room =  RunRandomWalk(randomWalkParameter, position);
+                roomFloors.UnionWith(room);
+            }
+        }
+    }
+
+    private List<Vector2Int> FindAllDeadEnds(HashSet<Vector2Int> floorPos)
+    {
+        List<Vector2Int> deadEnds = new List<Vector2Int>();
+        foreach(var position in floorPos)
+        {
+            int neeighboursCount = 0;
+            foreach(var direction in Direction2D.cardinalDirectionList)
+            {
+                if(floorPos.Contains(position+direction))
+                    neeighboursCount++;
+            }
+            if(neeighboursCount == 1)
+                deadEnds.Add(position);
+        }
+        return deadEnds;
     }
 
     private HashSet<Vector2Int> CreateRooms(HashSet<Vector2Int> potentialRoomPos)
