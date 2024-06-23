@@ -17,6 +17,11 @@ public class RoomFirstDungeonGenerator : DungeonGenerator
     [SerializeField]
     private bool randomWalkRooms = false;
 
+    private void Start()
+    {
+        GenerateDungeon();
+    }
+
     protected override void RunProceduralGeneration()
     {
         CreateRooms();
