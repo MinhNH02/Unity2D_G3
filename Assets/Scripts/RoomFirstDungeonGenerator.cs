@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-
 public class RoomFirstDungeonGenerator : DungeonGenerator
 {
     [SerializeField]
@@ -12,10 +11,14 @@ public class RoomFirstDungeonGenerator : DungeonGenerator
     [SerializeField]
     private int dungeonWidth = 20, dungeonHeight = 20;
     [SerializeField]
-    [Range(0,10)]
+    [Range(0, 10)]
     private int offset = 1;
     [SerializeField]
     private bool randomWalkRooms = false;
+    [SerializeField]
+    private GameObject playerPrefab; // Player prefab to instantiate
+
+    private Vector2Int spawnRoomCenter;
 
     private void Start()
     {
@@ -25,12 +28,13 @@ public class RoomFirstDungeonGenerator : DungeonGenerator
     protected override void RunProceduralGeneration()
     {
         CreateRooms();
+        SpawnPlayer();
     }
 
     private void CreateRooms()
     {
         var roomList = ProceduralGenerationAlgorithms.BinarySpacePartitioning
-            (new BoundsInt((Vector3Int)startPos, new Vector3Int(dungeonWidth, dungeonHeight,0)), minRoomWidth, minRoomHeight);
+            (new BoundsInt((Vector3Int)startPos, new Vector3Int(dungeonWidth, dungeonHeight, 0)), minRoomWidth, minRoomHeight);
 
         HashSet<Vector2Int> floor = new HashSet<Vector2Int>();
 
@@ -47,6 +51,12 @@ public class RoomFirstDungeonGenerator : DungeonGenerator
         foreach (var room in roomList)
         {
             roomCenters.Add((Vector2Int)Vector3Int.RoundToInt(room.center));
+        }
+
+        // Define the spawn room center
+        if (roomCenters.Count > 0)
+        {
+            spawnRoomCenter = roomCenters[0];
         }
 
         HashSet<Vector2Int> corridors = ConnectRooms(roomCenters);
@@ -66,7 +76,7 @@ public class RoomFirstDungeonGenerator : DungeonGenerator
             var roomFloor = RunRandomWalk(randomWalkParameter, roomCenter);
             foreach (var position in roomFloor)
             {
-                if(position.x >= (roomBounds.xMin + offset)
+                if (position.x >= (roomBounds.xMin + offset)
                     && position.x <= (roomBounds.xMax - offset)
                     && position.y >= (roomBounds.yMin - offset)
                     && position.y <= (roomBounds.yMax - offset))
@@ -100,25 +110,25 @@ public class RoomFirstDungeonGenerator : DungeonGenerator
         HashSet<Vector2Int> corridor = new HashSet<Vector2Int>();
         var position = currentRoomCenter;
         corridor.Add(position);
-        while(position.y != destination.y)
+        while (position.y != destination.y)
         {
-            if(destination.y > position.y)
+            if (destination.y > position.y)
             {
                 position += Vector2Int.up;
             }
-            else if(destination.y < position.y)
+            else if (destination.y < position.y)
             {
                 position += Vector2Int.down;
             }
             corridor.Add(position);
         }
-        while(position.x != destination.x)
+        while (position.x != destination.x)
         {
             if (destination.x > position.x)
             {
                 position += Vector2Int.right;
             }
-            else if(destination.x < position.x)
+            else if (destination.x < position.x)
             {
                 position += Vector2Int.left;
             }
@@ -134,7 +144,7 @@ public class RoomFirstDungeonGenerator : DungeonGenerator
         foreach (var position in roomCenters)
         {
             float currentDistance = Vector2.Distance(position, currentRoomCenter);
-            if(currentDistance< distance)
+            if (currentDistance < distance)
             {
                 distance = currentDistance;
                 closest = position;
@@ -148,9 +158,9 @@ public class RoomFirstDungeonGenerator : DungeonGenerator
         HashSet<Vector2Int> floor = new HashSet<Vector2Int>();
         foreach (var room in roomList)
         {
-            for(int col = offset; col < room.size.x - offset; col++)
+            for (int col = offset; col < room.size.x - offset; col++)
             {
-                for(int row = offset; row < room.size.y - offset; row++)
+                for (int row = offset; row < room.size.y - offset; row++)
                 {
                     Vector2Int position = (Vector2Int)room.min + new Vector2Int(col, row);
                     floor.Add(position);
@@ -158,5 +168,17 @@ public class RoomFirstDungeonGenerator : DungeonGenerator
             }
         }
         return floor;
+    }
+
+    private void SpawnPlayer()
+    {
+        if (playerPrefab != null && spawnRoomCenter != null)
+        {
+            Instantiate(playerPrefab, new Vector3(spawnRoomCenter.x, spawnRoomCenter.y, 0), Quaternion.identity);
+        }
+        else
+        {
+            Debug.LogWarning("Player Prefab is not assigned or spawn room center is not defined.");
+        }
     }
 }
