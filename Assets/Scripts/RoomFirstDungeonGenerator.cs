@@ -18,9 +18,16 @@ public class RoomFirstDungeonGenerator : DungeonGenerator
     [SerializeField]
     private GameObject playerPrefab; // Player prefab to instantiate
     [SerializeField]
-    private GameObject enemyPrefab;
+    private GameObject doorPrefab; // Door prefab
+    [SerializeField]
+    private GameObject[] propsPrefabs; // Array of props prefabs
+    [SerializeField]
+    private GameObject chestPrefab; // Chest prefab
+    [SerializeField]
+    private int corridorWidth = 2; // Width of the corridors
 
     private Vector2Int spawnRoomCenter;
+    private Vector2Int bossRoomCenter;
 
     private void Start()
     {
@@ -30,8 +37,9 @@ public class RoomFirstDungeonGenerator : DungeonGenerator
     protected override void RunProceduralGeneration()
     {
         CreateRooms();
+        PlaceBossRoom();
         SpawnPlayer();
-        SpawnEnemy();
+        PlacePropsAndChests();
     }
 
     private void CreateRooms()
@@ -113,6 +121,8 @@ public class RoomFirstDungeonGenerator : DungeonGenerator
         HashSet<Vector2Int> corridor = new HashSet<Vector2Int>();
         var position = currentRoomCenter;
         corridor.Add(position);
+
+        // Move vertically
         while (position.y != destination.y)
         {
             if (destination.y > position.y)
@@ -123,8 +133,10 @@ public class RoomFirstDungeonGenerator : DungeonGenerator
             {
                 position += Vector2Int.down;
             }
-            corridor.Add(position);
+            AddCorridorWidth(position, corridor);
         }
+
+        // Move horizontally
         while (position.x != destination.x)
         {
             if (destination.x > position.x)
@@ -135,9 +147,23 @@ public class RoomFirstDungeonGenerator : DungeonGenerator
             {
                 position += Vector2Int.left;
             }
-            corridor.Add(position);
+            AddCorridorWidth(position, corridor);
         }
+
         return corridor;
+    }
+
+    // Adds width to the corridor
+    private void AddCorridorWidth(Vector2Int position, HashSet<Vector2Int> corridor)
+    {
+        for (int i = -corridorWidth / 2; i <= corridorWidth / 2; i++)
+        {
+            for (int j = -corridorWidth / 2; j <= corridorWidth / 2; j++)
+            {
+                Vector2Int newPosition = position + new Vector2Int(i, j);
+                corridor.Add(newPosition);
+            }
+        }
     }
 
     private Vector2Int FindClosestPointTo(Vector2Int currentRoomCenter, List<Vector2Int> roomCenters)
@@ -178,24 +204,30 @@ public class RoomFirstDungeonGenerator : DungeonGenerator
         if (playerPrefab != null && spawnRoomCenter != null)
         {
             Instantiate(playerPrefab, new Vector3(spawnRoomCenter.x, spawnRoomCenter.y, 0), Quaternion.identity);
-
         }
         else
         {
             Debug.LogWarning("Player Prefab is not assigned or spawn room center is not defined.");
         }
     }
-    private void SpawnEnemy()
-    {
-        if (enemyPrefab != null && spawnRoomCenter != null)
-        {
-            Instantiate(playerPrefab, new Vector3(spawnRoomCenter.x+10, spawnRoomCenter.y+10, 0), Quaternion.identity);
 
-        }
-        else
+    private void PlaceBossRoom()
+    {
+        // Identify the boss room as the last room in the list (or any other criteria you choose)
+        if (bossRoomCenter != null)
         {
-            Debug.LogWarning("Enemy Prefab is not assigned or spawn room center is not defined.");
+            // Find a suitable position for the door (e.g., at the middle of a corridor leading to the boss room)
+            Vector2Int doorPosition = bossRoomCenter + new Vector2Int(corridorWidth / 2, 0); // Adjust this to the actual entrance position
+            Instantiate(doorPrefab, new Vector3(doorPosition.x, doorPosition.y, 0), Quaternion.identity);
         }
     }
 
+    private void PlacePropsAndChests()
+    {
+        // Place props and chests randomly within rooms
+        if (propsPrefabs != null && chestPrefab != null)
+        {
+            // Add logic to place props and chests within rooms
+        }
+    }
 }
