@@ -19,7 +19,7 @@ public class RoomFirstDungeonGenerator : DungeonGenerator
     private GameObject playerPrefab; // Player prefab to instantiate
     [SerializeField]
     private GameObject enemyPrefab;
-         
+
     private Vector2Int spawnRoomCenter;
 
     private void Start()

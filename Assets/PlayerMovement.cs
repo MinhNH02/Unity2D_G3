@@ -93,7 +93,7 @@ public class PlayerMovement : MonoBehaviour
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector2 fireDirection = (mousePos - (Vector2)transform.position).normalized;
             bullet.GetComponent<Bullet>().direction = fireDirection;
-            //bullet.GetComponent<Rigidbody2D>().velocity = fireDirection * 10;
+            bullet.GetComponent<Rigidbody2D>().velocity = fireDirection * 10;
         }
     }
 }
