@@ -17,7 +17,9 @@ public class RoomFirstDungeonGenerator : DungeonGenerator
     private bool randomWalkRooms = false;
     [SerializeField]
     private GameObject playerPrefab; // Player prefab to instantiate
-
+    [SerializeField]
+    private GameObject enemyPrefab;
+         
     private Vector2Int spawnRoomCenter;
 
     private void Start()
@@ -29,6 +31,7 @@ public class RoomFirstDungeonGenerator : DungeonGenerator
     {
         CreateRooms();
         SpawnPlayer();
+        SpawnEnemy();
     }
 
     private void CreateRooms()
@@ -175,10 +178,24 @@ public class RoomFirstDungeonGenerator : DungeonGenerator
         if (playerPrefab != null && spawnRoomCenter != null)
         {
             Instantiate(playerPrefab, new Vector3(spawnRoomCenter.x, spawnRoomCenter.y, 0), Quaternion.identity);
+
         }
         else
         {
             Debug.LogWarning("Player Prefab is not assigned or spawn room center is not defined.");
         }
     }
+    private void SpawnEnemy()
+    {
+        if (enemyPrefab != null && spawnRoomCenter != null)
+        {
+            Instantiate(playerPrefab, new Vector3(spawnRoomCenter.x+10, spawnRoomCenter.y+10, 0), Quaternion.identity);
+
+        }
+        else
+        {
+            Debug.LogWarning("Enemy Prefab is not assigned or spawn room center is not defined.");
+        }
+    }
+
 }
