@@ -17,8 +17,7 @@ public class RoomFirstDungeonGenerator : DungeonGenerator
     private bool randomWalkRooms = false;
     [SerializeField]
     private GameObject playerPrefab; // Player prefab to instantiate
-    [SerializeField]
-    private GameObject doorPrefab; // Door prefab
+
     [SerializeField]
     private GameObject[] propsPrefabs; // Array of props prefabs
     [SerializeField]
@@ -37,7 +36,6 @@ public class RoomFirstDungeonGenerator : DungeonGenerator
     protected override void RunProceduralGeneration()
     {
         CreateRooms();
-        PlaceBossRoom();
         SpawnPlayer();
         PlacePropsAndChests();
     }
@@ -208,17 +206,6 @@ public class RoomFirstDungeonGenerator : DungeonGenerator
         else
         {
             Debug.LogWarning("Player Prefab is not assigned or spawn room center is not defined.");
-        }
-    }
-
-    private void PlaceBossRoom()
-    {
-        // Identify the boss room as the last room in the list (or any other criteria you choose)
-        if (bossRoomCenter != null)
-        {
-            // Find a suitable position for the door (e.g., at the middle of a corridor leading to the boss room)
-            Vector2Int doorPosition = bossRoomCenter + new Vector2Int(corridorWidth / 2, 0); // Adjust this to the actual entrance position
-            Instantiate(doorPrefab, new Vector3(doorPosition.x, doorPosition.y, 0), Quaternion.identity);
         }
     }
 
