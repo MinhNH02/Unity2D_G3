@@ -16,19 +16,6 @@ public class TilemapVisualizer : MonoBehaviour
         wallInnerCornerDownLeft, wallInnerCornerDownRight,
         wallDiagonalCornerDownRight, wallDiagonalCornerDownLeft, wallDiagonalCornerUpRight, wallDiagonalCornerUpLeft;
 
-    private Dictionary<string, TileBase> floorTileMappings;
-
-    private void Awake()
-    {
-        // Initialize the floor tile mappings
-        floorTileMappings = new Dictionary<string, TileBase>
-        {
-            { "type1", floorTile1 },
-            { "type2", floorTile2 },
-            { "type3", floorTile3 }
-        };
-    }
-
     public void PaintFloorTiles(IEnumerable<Vector2Int> floorPos, Func<Vector2Int, TileBase> getTile)
     {
         foreach (var pos in floorPos)
