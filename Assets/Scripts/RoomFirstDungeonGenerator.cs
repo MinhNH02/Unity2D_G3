@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 using Random = UnityEngine.Random;
 
 public class RoomFirstDungeonGenerator : DungeonGenerator
@@ -71,7 +72,9 @@ public class RoomFirstDungeonGenerator : DungeonGenerator
         HashSet<Vector2Int> corridors = ConnectRooms(roomCenters);
         floor.UnionWith(corridors);
 
-        tilemapVisualizer.PaintFloorTiles(floor);
+        Func<Vector2Int, TileBase> getTile = tilemapVisualizer.GetFloorTile;
+
+        tilemapVisualizer.PaintFloorTiles(floor, getTile);  
         WallGenerator.CreateWalls(floor, tilemapVisualizer);
     }
 

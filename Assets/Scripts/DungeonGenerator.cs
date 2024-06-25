@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 using Random = UnityEngine.Random;
 
 public class DungeonGenerator : AbstractDungeonGenerator
@@ -14,7 +15,8 @@ public class DungeonGenerator : AbstractDungeonGenerator
     {
         HashSet<Vector2Int> floorPos = RunRandomWalk(randomWalkParameter, startPos);
         tilemapVisualizer.Clear();
-        tilemapVisualizer.PaintFloorTiles(floorPos);
+        Func<Vector2Int, TileBase> getTile = tilemapVisualizer.GetFloorTile;
+        tilemapVisualizer.PaintFloorTiles(floorPos, getTile);
         WallGenerator.CreateWalls(floorPos, tilemapVisualizer);
     }
 
