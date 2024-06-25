@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class CorridorFirstDungeonGenerator : DungeonGenerator
 {
@@ -38,7 +39,9 @@ public class CorridorFirstDungeonGenerator : DungeonGenerator
             floorPos.UnionWith(corridors[i]);
         }
 
-        tilemapVisualizer.PaintFloorTiles(floorPos);
+        Func<Vector2Int, TileBase> getTile = tilemapVisualizer.GetFloorTile;
+
+        tilemapVisualizer.PaintFloorTiles(floorPos, getTile);
         WallGenerator.CreateWalls(floorPos, tilemapVisualizer);
     }
 

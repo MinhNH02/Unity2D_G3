@@ -8,21 +8,33 @@ public class TilemapVisualizer : MonoBehaviour
 {
     [SerializeField]
     private Tilemap floorTilemap, wallTilemap;
+
     [SerializeField]
-    private TileBase floorTile, wallTop, wallSideRight, wallSideLeft, wallBottom, wallFull,
+    private TileBase floorTile1, floorTile2, floorTile3; 
+    [SerializeField]
+    private TileBase wallTop, wallSideRight, wallSideLeft, wallBottom, wallFull,
         wallInnerCornerDownLeft, wallInnerCornerDownRight,
         wallDiagonalCornerDownRight, wallDiagonalCornerDownLeft, wallDiagonalCornerUpRight, wallDiagonalCornerUpLeft;
 
-    public void PaintFloorTiles(IEnumerable<Vector2Int> floorPos)
+    private Dictionary<string, TileBase> floorTileMappings;
+
+    private void Awake()
     {
-        PaintTiles(floorPos, floorTilemap, floorTile);
+        // Initialize the floor tile mappings
+        floorTileMappings = new Dictionary<string, TileBase>
+        {
+            { "type1", floorTile1 },
+            { "type2", floorTile2 },
+            { "type3", floorTile3 }
+        };
     }
 
-    private void PaintTiles(IEnumerable<Vector2Int> positions, Tilemap tilemap, TileBase tile)
+    public void PaintFloorTiles(IEnumerable<Vector2Int> floorPos, Func<Vector2Int, TileBase> getTile)
     {
-        foreach (var pos in positions)
+        foreach (var pos in floorPos)
         {
-            PaintSingleTile(tilemap, tile, pos);
+            var tile = getTile(pos);
+            PaintSingleTile(floorTilemap, tile, pos);
         }
     }
 
@@ -31,7 +43,6 @@ public class TilemapVisualizer : MonoBehaviour
         var tilePos = tilemap.WorldToCell((Vector3Int)pos);
         tilemap.SetTile(tilePos, tile);
     }
-
 
     public void Clear()
     {
@@ -43,13 +54,13 @@ public class TilemapVisualizer : MonoBehaviour
     {
         int typeAsInt = Convert.ToInt32(binaryType, 2);
         TileBase tile = null;
-        if(WallTypesHelper.wallTop.Contains(typeAsInt))
+        if (WallTypesHelper.wallTop.Contains(typeAsInt))
         {
             tile = wallTop;
         }
         else if (WallTypesHelper.wallSideRight.Contains(typeAsInt))
         {
-            tile=wallSideRight;
+            tile = wallSideRight;
         }
         else if (WallTypesHelper.wallSideLeft.Contains(typeAsInt))
         {
@@ -107,5 +118,23 @@ public class TilemapVisualizer : MonoBehaviour
 
         if (tile != null)
             PaintSingleTile(wallTilemap, tile, position);
+    }
+
+    public TileBase GetFloorTile(Vector2Int position)
+    {
+        // Define logic to determine which tile to use based on the position with adjusted probabilities.
+        float randomValue = UnityEngine.Random.Range(0f, 1f);
+        if (randomValue < 0.6f)
+        {
+            return floorTile1; // 60% chance
+        }
+        else if (randomValue < 0.85f)
+        {
+            return floorTile2; // 25% chance
+        }
+        else
+        {
+            return floorTile3; // 15% chance
+        }
     }
 }
