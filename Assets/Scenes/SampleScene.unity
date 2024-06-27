@@ -1112,7 +1112,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 289500294}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -42.3, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2229,7 +2229,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.8, y: 5, z: -10}
+  m_LocalPosition: {x: -28.5, y: 5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -27271,7 +27271,21 @@ MonoBehaviour:
   offset: 1
   randomWalkRooms: 1
   playerPrefab: {fileID: 0}
-  propsPrefabs: []
+  enemyPrefab: {fileID: 0}
+  propsPrefabs:
+  - {fileID: 235609977}
+  - {fileID: 275421989}
+  - {fileID: 1502524366}
+  - {fileID: 242634435}
+  - {fileID: 665510528}
+  - {fileID: 1116209532}
+  - {fileID: 1540967323}
+  - {fileID: 1174424456}
+  - {fileID: 845046537}
+  - {fileID: 342518467}
+  - {fileID: 389093999}
+  - {fileID: 1669399666}
+  - {fileID: 1019437252}
   chestPrefab: {fileID: 0}
   corridorWidth: 3
 --- !u!4 &1443064304
@@ -43549,7 +43563,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4023778374206276034, guid: 83fb4813119b2384395bbe2567ea0033, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.5
+      value: -24.1
       objectReference: {fileID: 0}
     - target: {fileID: 4023778374206276034, guid: 83fb4813119b2384395bbe2567ea0033, type: 3}
       propertyPath: m_LocalPosition.y
