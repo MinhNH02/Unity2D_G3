@@ -99,6 +99,27 @@ public static class ProceduralGenerationAlgorithms
         roomsQueue.Enqueue(room1);
         roomsQueue.Enqueue(room2);
     }
+
+    public static HashSet<Vector2Int> GetRoomFloorTiles(List<BoundsInt> roomList, Vector2Int roomCenter)
+    {
+        foreach (var room in roomList)
+        {
+            if ((Vector2Int)Vector3Int.RoundToInt(room.center) == roomCenter)
+            {
+                HashSet<Vector2Int> floorTiles = new HashSet<Vector2Int>();
+                for (int col = room.min.x; col < room.max.x; col++)
+                {
+                    for (int row = room.min.y; row < room.max.y; row++)
+                    {
+                        floorTiles.Add(new Vector2Int(col, row));
+                    }
+                }
+                return floorTiles;
+            }
+        }
+        return new HashSet<Vector2Int>();
+    }
+
 }
 
 public static class Direction2D
