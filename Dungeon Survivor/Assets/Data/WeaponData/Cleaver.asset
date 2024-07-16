@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23583c76be0ac6344b7326d84d663d21, type: 3}
+  m_Name: Cleaver
+  m_EditorClassIdentifier: 
+  weaponName: Cleaver
+  stats:
+    damage: 15
+    timeToAttack: 1.5
+    numberOfAttacks: 1
+    numberOfHits: 0
+    projectileSpeed: 0
+    stun: 8
+    knockback: 8
+    knockbackTimeWeight: 8
+  weaponBasePrefab: {fileID: 3067602816947565710, guid: 78aad7871a38b6048aacafdabaac9119, type: 3}
+  upgrades:
+  - {fileID: 11400000, guid: d6924e2f8ccff514894b9d16bf6a8d08, type: 2}
+  - {fileID: 11400000, guid: 5a3dc80447c5000449c7a57cd8454bfd, type: 2}
+  - {fileID: 11400000, guid: fed3073c01352514dbce03696ec1fdac, type: 2}
+  - {fileID: 11400000, guid: 742458857a042b44f87e1e745553a40b, type: 2}
+  - {fileID: 11400000, guid: 832f15980ed273c469178d4d35bcac48, type: 2}
+  - {fileID: 11400000, guid: b2f6ed25b32fdf54a907cd3d07a34bc3, type: 2}

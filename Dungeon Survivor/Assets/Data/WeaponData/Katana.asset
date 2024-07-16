@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23583c76be0ac6344b7326d84d663d21, type: 3}
+  m_Name: Katana
+  m_EditorClassIdentifier: 
+  weaponName: Katana
+  stats:
+    damage: 7
+    timeToAttack: 1
+    numberOfAttacks: 1
+    numberOfHits: 0
+    projectileSpeed: 0
+    stun: 0
+    knockback: 1
+    knockbackTimeWeight: 1
+  weaponBasePrefab: {fileID: 3067602816947565710, guid: 24417e18d9cdce34fbe814fb25df2f9f, type: 3}
+  upgrades:
+  - {fileID: 11400000, guid: f2084d69e70c7384183e2cfab883d497, type: 2}
+  - {fileID: 11400000, guid: c4d9fd8fb0fab3b458218ea5367681ab, type: 2}
+  - {fileID: 11400000, guid: b745b897a140aaa4e8e207db7a47df8b, type: 2}
+  - {fileID: 11400000, guid: c6ac0264a1ad9d7458f06ddf7e262ec0, type: 2}
+  - {fileID: 11400000, guid: 832f15980ed273c469178d4d35bcac48, type: 2}
+  - {fileID: 11400000, guid: b2f6ed25b32fdf54a907cd3d07a34bc3, type: 2}

@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a60c4b94c2fbf174ca984cdb39ec3c6d, type: 3}
+  m_Name: Get Axe
+  m_EditorClassIdentifier: 
+  UpgradeType: 2
+  upgradeName: ThrowingAxe
+  upgradeDecription: Get ThrowingAxe
+  icon: {fileID: 21300000, guid: 707a25c121d95bf458a598b04cb91c57, type: 3}
+  weaponData: {fileID: 11400000, guid: 9a0da96659746544a8e486278245894b, type: 2}
+  weaponUpgradeStats:
+    damage: 0
+    timeToAttack: 0
+    numberOfAttacks: 0
+    numberOfHits: 0
+    projectileSpeed: 0
+    stun: 0
+    knockback: 0
+    knockbackTimeWeight: 0
+  item: {fileID: 0}
+  itemStats:
+    armor: 0
