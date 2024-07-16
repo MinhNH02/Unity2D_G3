@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23583c76be0ac6344b7326d84d663d21, type: 3}
+  m_Name: ThrowingAxe
+  m_EditorClassIdentifier: 
+  weaponName: ThrowingAxe
+  stats:
+    damage: 12
+    timeToAttack: 1
+    numberOfAttacks: 2
+    numberOfHits: 3
+    projectileSpeed: 5
+    stun: 8
+    knockback: 8
+    knockbackTimeWeight: 8
+  weaponBasePrefab: {fileID: 3221809015959112695, guid: aaaf1fa06634de64d950899b4e7453b1, type: 3}
+  upgrades:
+  - {fileID: 11400000, guid: 9c3a25131e22ad546bd81e9a5fbf1695, type: 2}
+  - {fileID: 11400000, guid: 84c6ea0f8123bcf46b94bf572259b467, type: 2}
+  - {fileID: 11400000, guid: 266ff493fa0afe343a94bd74ddaf23c8, type: 2}
+  - {fileID: 11400000, guid: 52ac8fd83d7f3d24e87e328e125bdd4f, type: 2}
+  - {fileID: 11400000, guid: 832f15980ed273c469178d4d35bcac48, type: 2}
+  - {fileID: 11400000, guid: 742458857a042b44f87e1e745553a40b, type: 2}
+  - {fileID: 11400000, guid: c6ac0264a1ad9d7458f06ddf7e262ec0, type: 2}

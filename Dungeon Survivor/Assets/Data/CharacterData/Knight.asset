@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6288337dfc90bcb42bf4f47c4bbdb043, type: 3}
+  m_Name: Knight
+  m_EditorClassIdentifier: 
+  Name: Knight
+  spritePrefab: {fileID: 6404875394348620642, guid: a3f0022e51ac0bb41a07eb2b3be98888, type: 3}
+  startingWeapon: {fileID: 11400000, guid: 228a32c6ad3850244a30538ebbc07d83, type: 2}

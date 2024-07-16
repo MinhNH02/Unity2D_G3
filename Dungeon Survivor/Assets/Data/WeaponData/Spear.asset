@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23583c76be0ac6344b7326d84d663d21, type: 3}
+  m_Name: Spear
+  m_EditorClassIdentifier: 
+  weaponName: Spear
+  stats:
+    damage: 5
+    timeToAttack: 0.5
+    numberOfAttacks: 3
+    numberOfHits: 1
+    projectileSpeed: 10
+    stun: 2
+    knockback: 3
+    knockbackTimeWeight: 3
+  weaponBasePrefab: {fileID: 2694033082418723950, guid: cb84381f82d8a004c8860c36f92538bf, type: 3}
+  upgrades:
+  - {fileID: 11400000, guid: 4e13c82d0e1d3654388b1fea4233f730, type: 2}
+  - {fileID: 11400000, guid: 5fbc9af50b4b0f148b60d5853a3c5ea8, type: 2}
+  - {fileID: 11400000, guid: 6692054bd5aec9f46b24417f2136a4a5, type: 2}
+  - {fileID: 11400000, guid: a507a0e3cb3c2754da8f0e120e91724b, type: 2}
+  - {fileID: 11400000, guid: b2f6ed25b32fdf54a907cd3d07a34bc3, type: 2}
+  - {fileID: 11400000, guid: 742458857a042b44f87e1e745553a40b, type: 2}
+  - {fileID: 11400000, guid: c6ac0264a1ad9d7458f06ddf7e262ec0, type: 2}

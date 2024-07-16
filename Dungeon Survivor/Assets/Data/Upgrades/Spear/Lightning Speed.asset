@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a60c4b94c2fbf174ca984cdb39ec3c6d, type: 3}
+  m_Name: Lightning Speed
+  m_EditorClassIdentifier: 
+  UpgradeType: 0
+  upgradeName: Lightning Speed
+  upgradeDecription: Faster Projectile
+  icon: {fileID: 21300000, guid: 48d1a60287e67014f8186e0cc6a8cdc5, type: 3}
+  weaponData: {fileID: 11400000, guid: a4aa5b9c2be1c284a9a7cecc499e303a, type: 2}
+  weaponUpgradeStats:
+    damage: 0
+    timeToAttack: 0
+    numberOfAttacks: 0
+    numberOfHits: 0
+    projectileSpeed: 10
+    stun: 0
+    knockback: 0
+    knockbackTimeWeight: 0
+  item: {fileID: 0}
+  itemStats:
+    armor: 0
