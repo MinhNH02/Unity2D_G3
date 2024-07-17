@@ -146,6 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 633f84d2c6e018940918b55c382bf44b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stageData: {fileID: 0}
 --- !u!1 &8247055505240157907
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,7 +212,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Level
+  m_text: 'Stage
 
 '
   m_isRightToLeft: 0
