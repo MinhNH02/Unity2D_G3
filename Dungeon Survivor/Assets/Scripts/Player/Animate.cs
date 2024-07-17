@@ -30,4 +30,8 @@ public class Animate : MonoBehaviour
         float randomValue = Random.Range(0f, 100f);
         
     }
+    void TemporaryFunction()
+    {
+       
+    }
 }
