@@ -26,7 +26,7 @@ public abstract class WeaponBase : MonoBehaviour
     {
         timer -= Time.deltaTime;
 
-        if (timer < 0f)
+        if (Input.GetKeyDown(KeyCode.Space) && timer < 0f)
         {
             Attack();
             timer = weaponStats.timeToAttack;
