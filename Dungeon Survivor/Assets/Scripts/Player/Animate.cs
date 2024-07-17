@@ -19,4 +19,10 @@ public class Animate : MonoBehaviour
         animator = animObject.GetComponentInChildren<Animator>();
 
     }
+    //  create vector 
+    void CreateVector()
+    {
+        Vector3 position = new Vector3(0, 0, 0);
+        Debug.Log("CreateVector created a Vector3 but did not use it.");
+    }
 }
