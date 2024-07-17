@@ -2056,11 +2056,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5189170832483045058, guid: 52ec030ab3a307049bca4a9dc54b0883, type: 3}
       propertyPath: m_text
-      value: Level 2
+      value: Stage 2
       objectReference: {fileID: 0}
     - target: {fileID: 5189170832483045058, guid: 52ec030ab3a307049bca4a9dc54b0883, type: 3}
       propertyPath: m_xAdvance
-      value: 77.5814
+      value: 82.88372
       objectReference: {fileID: 0}
     - target: {fileID: 5189170832483045058, guid: 52ec030ab3a307049bca4a9dc54b0883, type: 3}
       propertyPath: m_characterCount
@@ -2101,6 +2101,10 @@ PrefabInstance:
     - target: {fileID: 5189170832483045058, guid: 52ec030ab3a307049bca4a9dc54b0883, type: 3}
       propertyPath: m_lastVisibleCharacterOfLine
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5189170832483045058, guid: 52ec030ab3a307049bca4a9dc54b0883, type: 3}
+      propertyPath: m_firstVisibleCharacterOfLine
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5189170832483045058, guid: 52ec030ab3a307049bca4a9dc54b0883, type: 3}
       propertyPath: m_cached_TextElement.m_Unicode
@@ -3012,11 +3016,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5189170832483045058, guid: 52ec030ab3a307049bca4a9dc54b0883, type: 3}
       propertyPath: m_text
-      value: Level 3
+      value: Stage 3
       objectReference: {fileID: 0}
     - target: {fileID: 5189170832483045058, guid: 52ec030ab3a307049bca4a9dc54b0883, type: 3}
       propertyPath: m_xAdvance
-      value: 77.5814
+      value: 82.88372
       objectReference: {fileID: 0}
     - target: {fileID: 5189170832483045058, guid: 52ec030ab3a307049bca4a9dc54b0883, type: 3}
       propertyPath: m_characterCount
@@ -4941,14 +4945,46 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5189170832483045058, guid: 52ec030ab3a307049bca4a9dc54b0883, type: 3}
       propertyPath: m_text
-      value: 'Level 1
+      value: 'Stage 1
 
 
 '
       objectReference: {fileID: 0}
     - target: {fileID: 5189170832483045058, guid: 52ec030ab3a307049bca4a9dc54b0883, type: 3}
+      propertyPath: m_characterCount
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5189170832483045058, guid: 52ec030ab3a307049bca4a9dc54b0883, type: 3}
       propertyPath: m_VerticalAlignment
       value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 5189170832483045058, guid: 52ec030ab3a307049bca4a9dc54b0883, type: 3}
+      propertyPath: m_lastCharacterOfLine
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5189170832483045058, guid: 52ec030ab3a307049bca4a9dc54b0883, type: 3}
+      propertyPath: m_totalCharacterCount
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5189170832483045058, guid: 52ec030ab3a307049bca4a9dc54b0883, type: 3}
+      propertyPath: m_firstCharacterOfLine
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5189170832483045058, guid: 52ec030ab3a307049bca4a9dc54b0883, type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5189170832483045058, guid: 52ec030ab3a307049bca4a9dc54b0883, type: 3}
+      propertyPath: m_lastVisibleCharacterOfLine
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5189170832483045058, guid: 52ec030ab3a307049bca4a9dc54b0883, type: 3}
+      propertyPath: m_firstVisibleCharacterOfLine
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5189170832483045058, guid: 52ec030ab3a307049bca4a9dc54b0883, type: 3}
+      propertyPath: m_InternalTextProcessingArraySize
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8223051812511469053, guid: 52ec030ab3a307049bca4a9dc54b0883, type: 3}
       propertyPath: m_Name
