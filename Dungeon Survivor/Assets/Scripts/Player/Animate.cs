@@ -23,6 +23,11 @@ public class Animate : MonoBehaviour
     void CreateVector()
     {
         Vector3 position = new Vector3(0, 0, 0);
-        Debug.Log("CreateVector created a Vector3 but did not use it.");
+        
+    }
+    void CreateRandomValue()
+    {
+        float randomValue = Random.Range(0f, 100f);
+        
     }
 }
