@@ -31,6 +31,15 @@ MonoBehaviour:
     isRepeatedEvent: 1
     repeatEverySecond: 5
     repeatCount: 2147483647
+  - eventType: 3
+    time: 45
+    message: You win
+    enemyToSpawn: {fileID: 0}
+    objectToSpawn: {fileID: 0}
+    count: 0
+    isRepeatedEvent: 0
+    repeatEverySecond: 0
+    repeatCount: 0
   stageId: Level 3 Complete
   stageCompletionToUnlock:
   - Level 2 Complete
