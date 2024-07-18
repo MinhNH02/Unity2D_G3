@@ -269,8 +269,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8d8bcde315bb33a42b776c8265168dd3, type: 2}
+  m_sharedMaterial: {fileID: -8698044284747538916, guid: 8d8bcde315bb33a42b776c8265168dd3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -665,8 +665,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8d8bcde315bb33a42b776c8265168dd3, type: 2}
+  m_sharedMaterial: {fileID: -8698044284747538916, guid: 8d8bcde315bb33a42b776c8265168dd3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -856,8 +856,8 @@ MonoBehaviour:
   m_text: Uncover hidden secrets and forge your destiny in this thrilling 2D action
     game
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8d8bcde315bb33a42b776c8265168dd3, type: 2}
+  m_sharedMaterial: {fileID: -8698044284747538916, guid: 8d8bcde315bb33a42b776c8265168dd3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -920,7 +920,7 @@ MonoBehaviour:
   m_margin: {x: -714.88403, y: -176.79913, z: -671.8374, w: -46.12152}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1378590952
@@ -1050,7 +1050,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -394, y: -20}
+  m_AnchoredPosition: {x: 466, y: -35}
   m_SizeDelta: {x: -1222.9712, y: -820.549}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1455484384
@@ -1233,8 +1233,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8d8bcde315bb33a42b776c8265168dd3, type: 2}
+  m_sharedMaterial: {fileID: -8698044284747538916, guid: 8d8bcde315bb33a42b776c8265168dd3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1297,7 +1297,7 @@ MonoBehaviour:
   m_margin: {x: -714.88403, y: -176.79913, z: -671.8374, w: -46.12152}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1544833748
@@ -1495,7 +1495,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 459, y: -26}
+  m_AnchoredPosition: {x: -380, y: -29}
   m_SizeDelta: {x: -1222.9712, y: -820.549}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1930594254
@@ -1541,8 +1541,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8d8bcde315bb33a42b776c8265168dd3, type: 2}
+  m_sharedMaterial: {fileID: -8698044284747538916, guid: 8d8bcde315bb33a42b776c8265168dd3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

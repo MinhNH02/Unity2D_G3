@@ -18,12 +18,12 @@ MonoBehaviour:
     message: 
     enemyToSpawn: {fileID: 11400000, guid: 049fb92b7bdf58e4daaa7757ba15139f, type: 2}
     objectToSpawn: {fileID: 0}
-    count: 2
+    count: 15
     isRepeatedEvent: 1
     repeatEverySecond: 1
-    repeatCount: 10
-  - eventType: 4
-    time: 100
+    repeatCount: 30
+  - eventType: 3
+    time: 30
     message: 
     enemyToSpawn: {fileID: 0}
     objectToSpawn: {fileID: 0}
